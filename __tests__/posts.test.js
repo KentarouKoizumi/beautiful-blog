@@ -26,6 +26,7 @@ describe('posts utilities', () => {
     const post = await getPostData(params.slug);
     expect(post).toHaveProperty('slug', params.slug);
     expect(post).toHaveProperty('contentHtml');
-    expect(post.contentHtml).toContain('<h1>');
+    expect(post.contentHtml).toContain('<h1');
+    expect(Array.isArray(post.headings)).toBe(true);
   });
 });

@@ -28,7 +28,21 @@ export default function Post({ postData }) {
       animate={{ opacity: 1, y: 0 }}
     >
       <h1>{postData.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <div className="relative">
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        {postData.headings && postData.headings.length > 0 && (
+          <aside className="toc">
+            <strong>目次</strong>
+            <ul>
+              {postData.headings.map(h => (
+                <li key={h.id}>
+                  <a href={`#${h.id}`}>{h.text}</a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        )}
+      </div>
       <Button asChild variant="ghost" className="mt-4">
         <Link href="/">Back</Link>
       </Button>
