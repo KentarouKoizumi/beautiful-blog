@@ -11,13 +11,13 @@ npm run dev
 
 ## GitHub Pages
 
-以下のコマンドで静的ファイルを `docs/` フォルダに生成し、GitHub Pages で公開できます。
+GitHub Actions で自動的にビルド・デプロイされるよう設定しています。ローカルで確認したい場合は次のコマンドを実行します。
 
 ```
 npm run export
 ```
 
-生成された `docs/` フォルダをコミットし、リポジトリの設定で Pages の公開先を `docs/` に指定してください。
+`docs/` フォルダに静的ファイルが生成されますが、コミットする必要はありません。GitHub Pages の公開先は `GitHub Actions` を選択してください。
 
 ## 構成
 - `posts/` ディレクトリに Markdown 記事を保管します。
