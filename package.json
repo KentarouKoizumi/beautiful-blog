@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "rm -rf docs && next build && mv out docs",
     "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "dependencies": {
