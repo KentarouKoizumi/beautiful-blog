@@ -7,14 +7,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "rm -rf docs && next build && mv out docs"
+    "export": "rm -rf docs && next build && mv out docs",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "dependencies": {
+    "gray-matter": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "gray-matter": "latest",
     "remark": "latest",
     "remark-html": "latest"
-  }
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "jest": "^29.7.0"
+  },
+  "type": "module"
 }
