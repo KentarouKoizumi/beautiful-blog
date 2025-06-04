@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getSortedPostsData } from '../lib/posts'
+import { motion } from 'framer-motion'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -12,17 +13,28 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <div>
+    <motion.div
+      className="container"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
       <h1>My Blog</h1>
-      <ul>
+      <motion.ul
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+        }}
+      >
         {allPostsData.map(({ slug, date, title }) => (
-          <li key={slug}>
+          <motion.li key={slug} variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
             <Link href={`/posts/${slug}`}>{title}</Link>
             <br />
             <small>{date}</small>
-          </li>
+          </motion.li>
         ))}
-      </ul>
-    </div>
+      </motion.ul>
+    </motion.div>
   )
 }

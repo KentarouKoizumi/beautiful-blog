@@ -11,6 +11,7 @@
     "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "dependencies": {
+    "framer-motion": "^12.16.0",
     "gray-matter": "latest",
     "next": "latest",
     "react": "latest",

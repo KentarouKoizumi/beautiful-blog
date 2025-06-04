@@ -22,3 +22,5 @@ npm run export
 ## 構成
 - `posts/` ディレクトリに Markdown 記事を保管します。
 - `pages/` 以下で記事一覧と記事ページを表示します。
+- `styles/` にグローバル CSS を置き、`framer-motion` でアニメーションを実装しています。
+
