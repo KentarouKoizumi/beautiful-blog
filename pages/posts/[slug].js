@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import { getAllPostSlugs, getPostData } from '../../lib/posts'
 import { motion } from 'framer-motion'
+import { Button } from '@/components/components/ui/button'
 
 export async function getStaticPaths() {
   const paths = getAllPostSlugs()
@@ -27,6 +29,9 @@ export default function Post({ postData }) {
     >
       <h1>{postData.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <Button asChild variant="ghost" className="mt-4">
+        <Link href="/">Back</Link>
+      </Button>
     </motion.div>
   )
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getSortedPostsData } from '../lib/posts'
 import { motion } from 'framer-motion'
+import { Button } from '@/components/components/ui/button'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -29,7 +30,9 @@ export default function Home({ allPostsData }) {
       >
         {allPostsData.map(({ slug, date, title }) => (
           <motion.li key={slug} variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
-            <Link href={`/posts/${slug}`}>{title}</Link>
+            <Button asChild variant="link">
+              <Link href={`/posts/${slug}`}>{title}</Link>
+            </Button>
             <br />
             <small>{date}</small>
           </motion.li>
