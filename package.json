@@ -1,0 +1,19 @@
+{
+  "name": "beautiful-blog",
+  "version": "1.0.0",
+  "description": "デザインにこだわったシンプルなブログアプリです。",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "gray-matter": "latest",
+    "remark": "latest",
+    "remark-html": "latest"
+  }
+}
